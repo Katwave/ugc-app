@@ -80,7 +80,7 @@ const Nav = () => {
     navigate(`/search`);
   }
   useEffect(()=>{
-    // console.log('searchQ:', searchQ);
+    console.log('tags:', tags);
   }, [searchQ, showSearchPopup])
 
   const renderSearchPopup = ()=>{
