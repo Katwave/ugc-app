@@ -1,0 +1,110 @@
+.mobile-nav {
+  position: sticky;
+  display: flex;
+  justify-content: space-evenly;
+  display: none;
+  //   background-color: rgb(21, 108, 179);
+  background-color: #fff;
+  // box-shadow: 0px 3px 28px rgba(60, 61, 67, 0.2);
+  width: 100%;
+
+  @media screen and (max-width: 600px) {
+    display: flex;
+  }
+
+  @import './assets/search-popup';
+  .search-popup{
+    .mobile-autocomplete{
+      padding-top: 10px;
+      top: 48px;
+    }
+  }
+
+  a {
+    position: relative;
+    text-decoration: none;
+    color: rgb(61, 66, 70);
+    font-size: 20px;
+    padding: 8px 0px;
+    width: 16.7%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50px;
+    }
+
+    span.noti {
+      position: absolute;
+      top: 16%;
+      right: 0;
+      margin-right: 12px;
+      padding: 1px 4px;
+      font-size: 10px;
+      background-color: rgb(255, 41, 95);
+      border-radius: 50px;
+      right: 0;
+      color: #fff;
+    }
+  }
+  a.active {
+    // background-color: rgb(11, 38, 59);
+    color: rgb(0, 140, 255);
+    border-bottom: 3px solid rgb(0, 140, 255);
+  }
+
+  .ham-nav {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    display: none;
+    background-color: transparent;
+
+    @media screen and (max-width: 630px) {
+      display: flex;
+    }
+
+    .openNav {
+      display: inline-block;
+      cursor: pointer;
+      .bar1,
+      .bar2,
+      .bar3 {
+        background: #444;
+        width: 20px;
+        height: 3px;
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+    }
+
+    .closeNav {
+      cursor: pointer;
+      .bar1,
+      .bar2,
+      .bar3 {
+        width: 20px;
+        height: 3px;
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+      .bar1 {
+        background: #fff;
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+      }
+      .bar2 {
+        background: #fff;
+        opacity: 0;
+      }
+      .bar3 {
+        background: #fff;
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+      }
+    }
+  }
+}

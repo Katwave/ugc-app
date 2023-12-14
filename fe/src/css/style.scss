@@ -1,0 +1,590 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Mixins
+@mixin mobileCards {
+  @media screen and (max-width: 600px) {
+    box-shadow: none;
+    border-radius: none;
+  }
+}
+@mixin mobilePadding {
+  padding: 12px;
+}
+
+body {
+  background-color: #eee;
+  font-family: sans-serif;
+  width: 100%;
+  height: fit-content;
+
+  @media screen and (max-width: 600px) {
+    background-color: #ddd;
+  }
+
+  .nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 3px 28px rgba(60, 61, 67, 0.2);
+    z-index: 10000;
+    // @media screen and (max-width: 600px) {
+    //   box-shadow: 3px 3px 12px rgba(60, 61, 67, 0.7);
+    // }
+
+    // Navigations
+    @import "./components/mobile-nav";
+    @import "./components/desktop-nav";
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 1099px) {
+      align-items: flex-start;
+    }
+    @media screen and (max-width: 899px) {
+      align-items: center;
+    }
+
+    .left-sidebar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 18%;
+      background-color: transparent;
+      height: 100%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (max-width: 1099px) {
+        display: none;
+      }
+
+      .shortcuts {
+        margin-top: 10px;
+        border-top: 3px solid #ddd;
+
+        h4 {
+          color: #777;
+          font-size: 18px;
+          margin-top: 10px;
+          padding: 10px 10px 0px 10px;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: #444;
+        position: relative;
+        margin-top: 15px;
+        background-color: transparent;
+        border-radius: 10px;
+        width: 100%;
+        min-height: fit-content;
+        transition: all 300ms ease-in-out;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        overflow: hidden;
+        // justify-content: space-evenly;
+        padding: 10px 0px 10px 0px;
+        @media screen and (max-width: 600px) {
+          padding: 12px;
+          background-color: #fff;
+          border-radius: 0px;
+        }
+
+        &:hover {
+          background-color: #ddd;
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50px;
+          margin-left: 10px;
+        }
+
+        i {
+          font-size: 40px;
+          margin-left: 10px;
+        }
+        .group {
+          border-radius: 50px;
+          padding: 10px;
+          font-size: 24px;
+          color: #fff;
+          background-color: rgb(0, 140, 255);
+        }
+        .more {
+          @extend .group;
+          background-color: #ddd;
+          color: #444;
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          margin-left: 10px;
+          overflow: hidden;
+          h3 {
+            font-size: 16px;
+            display: block;
+            white-space: nowrap;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          .num-of-this {
+            display: flex;
+            span {
+              align-self: flex-end;
+              width: 8px;
+              height: 8px;
+              background-color: rgb(0, 140, 255);
+              border-radius: 50px;
+            }
+            p {
+              color: #444;
+              font-size: 13px;
+              margin-left: 3px;
+              margin-top: 3px;
+              color: rgb(0, 140, 255);
+            }
+          }
+        }
+      }
+    }
+
+    .right-sidebar {
+      // @extend .left-sidebar;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 18%;
+      background-color: transparent;
+      height: 100%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (max-width: 1099px) {
+        display: none;
+      }
+
+      .birthday {
+        margin-top: 10px;
+        border-top: 3px solid #ddd;
+      }
+
+      .head {
+        display: flex;
+        background-color: transparent;
+        h4 {
+          flex: 1;
+          color: #777;
+          font-size: 18px;
+          margin-top: 10px;
+          padding: 10px 10px 0px 10px;
+        }
+        button {
+          width: 35px;
+          height: 35px;
+          border-radius: 50px;
+          background-color: #ddd;
+          color: #444;
+          border: none;
+          outline: none;
+          margin-top: 10px;
+          cursor: pointer;
+          i {
+            font-size: 16px;
+          }
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: #444;
+        position: relative;
+        margin-top: 15px;
+        background-color: transparent;
+        border-radius: 10px;
+        width: 100%;
+        min-height: fit-content;
+        transition: all 300ms ease-in-out;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        overflow: hidden;
+        // justify-content: space-evenly;
+        padding: 10px 6px 16px 0px;
+        @media screen and (max-width: 600px) {
+          padding: 12px;
+          background-color: #fff;
+          border-radius: 0px;
+        }
+
+        &:hover {
+          background-color: #ddd;
+        }
+
+        i {
+          font-size: 40px;
+          margin-left: 10px;
+        }
+
+        .outside {
+          transform: translate(-10px, 12px);
+          width: 10px;
+          height: 10px;
+          border-radius: 5px;
+          background-color: #fff;
+          padding: 2px;
+
+          div {
+            width: 8px;
+            height: 8px;
+            border-radius: 5px;
+
+            background-color: rgb(18, 197, 18);
+          }
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50px;
+          margin-left: 10px;
+        }
+
+        i {
+          font-size: 40px;
+          margin-left: 10px;
+        }
+        .group {
+          border-radius: 50px;
+          padding: 10px;
+          font-size: 24px;
+          color: #fff;
+          background-color: rgb(0, 140, 255);
+        }
+        .more {
+          @extend .group;
+          background-color: #ddd;
+          color: #444;
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          margin-left: 10px;
+          h3 {
+            font-size: 16px;
+            color: #444;
+          }
+          p {
+            font-size: 16px;
+            color: #444;
+          }
+
+          .num-of-this {
+            display: flex;
+            span {
+              align-self: flex-end;
+              width: 8px;
+              height: 8px;
+              background-color: rgb(0, 140, 255);
+              border-radius: 50px;
+            }
+            p {
+              color: #444;
+              font-size: 13px;
+              margin-left: 3px;
+              margin-top: 3px;
+              color: rgb(0, 140, 255);
+            }
+          }
+        }
+      }
+    }
+
+    // Grid layout for posts
+    .grid-post-cont{
+      width: 36%;
+      padding: 10px;
+      min-height: 97vh;
+      margin-top: -30px;
+
+      @media screen and (max-width: 1700px) {
+        width: 50%;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 70%;
+        margin-top: 0;
+      }
+      @media screen and (max-width: 850px) {
+        width: 90%;
+      }
+      @media screen and (max-width: 430px) {
+        width: 100%;
+      }
+      @media screen and (max-width: 900px) {
+        margin-top: -50px;
+      }
+
+      .grid-layout{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 20px;
+        grid-gap: 5px;
+        
+        .img-cont{
+          position: relative;
+          width: 100%;
+          height: 300px;
+          cursor: pointer;
+
+          @media screen and (max-width: 2400px) {
+            height: 200px;
+          }
+          @media screen and (max-width: 1700px) {
+            height: 300px;
+          }
+          @media screen and (max-width: 1500px) {
+            height: 200px;
+          }
+          @media screen and (max-width: 850px) {
+            height: 200px;
+          }
+          @media screen and (max-width: 580px) {
+            height: 150px;
+          }
+          @media screen and (max-width: 350px) {
+            height: 100px;
+          }
+
+          &:hover{
+            .post-stats{
+              display: flex;
+            }
+          }
+
+          img{
+            width: 100%;
+            height: 100%;
+          }
+
+          .post-stats{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0,.25);
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            transition: all 250ms ease-in-out;
+
+            p{
+              color: #fff;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              
+              &:nth-child(2){
+                margin-left: 20px;
+              }
+
+              i{
+                font-size: 20px;
+              }
+              span{
+                margin-left: 6px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Popup for a clicked post
+    .post-popup{
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0,0,0,.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      z-index: 11020202;
+
+      .close-post-popup{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+        
+        p{
+          font-size: 30px;
+          color: #fff;
+        }
+
+        @media screen and (max-width: 700px) {
+          top: 10px;
+          right: 10px;
+          background-color: #000;
+          border-radius: 50%;
+
+          p{
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+
+      .card{
+        width: 50%;
+
+        @media screen and (min-width: 2400px) {
+          width: 30%;
+        }
+        @media screen and (max-width: 1200px) {
+          width: 70%;
+        }
+        @media screen and (max-width: 700px) {
+          width: 90%;
+        }
+        @media screen and (max-width: 500px) {
+          width: 100%;
+        }
+      }
+    }
+
+    // Card container for posts
+    .card-container {
+      width: 36%;
+      background-color: transparent;
+      height: 100%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (max-width: 1800px) {
+        width: 45%;
+      }
+
+      @media screen and (max-width: 1099px) {
+        width: 65%;
+      }
+
+      @media screen and (max-width: 899px) {
+        width: 80%;
+      }
+
+      @media screen and (max-width: 799px) {
+        width: 90%;
+      }
+
+      @media screen and (max-width: 699px) {
+        width: 100%;
+      }
+      @media screen and (max-width: 600px) {
+        padding: 0px;
+      }
+    }
+
+    .results-heading{
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .tags-heading{
+      margin-top: 20px;
+      font-size: 18px;
+      display: flex;
+
+      .tag-design {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 1px solid #777;
+        color: #777;
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p{
+          font-size: 36px;
+        }
+      }
+
+      .tag-info{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        .tag-text{
+          font-size: 24px;
+        }
+        .tag-post-len{
+          font-size: 14px;
+          color: #777;
+          margin-top: 3px;
+        }
+      }
+    }
+
+    // Loader styles
+    .loader{
+      p{
+        i{
+          animation: changeColor 3s infinite;
+          font-size: 48px;
+          color: #bbb;
+        }
+      }
+
+      @keyframes changeColor {
+        from{
+          color: #bbb;
+        }
+        to{
+          color: rgb(0, 140, 255)
+        }
+      }
+    }
+
+    // Story component
+    @import "./components/story-comp";
+
+    // Status component
+    @import "./components/status-comp";
+
+    // Card of posts
+    @import "./components/card";
+  }
+}

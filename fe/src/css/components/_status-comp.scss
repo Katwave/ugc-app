@@ -1,0 +1,126 @@
+.status-component {
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 100%;
+  min-height: fit-content;
+  box-shadow: 0px 1px 3px rgba(60, 61, 67, 0.2),
+    1px 0px 1px rgba(60, 61, 67, 0.2);
+  transition: all 300ms ease-in-out;
+  padding: 10px 20px;
+  @media screen and (max-width: 600px) {
+    box-shadow: none;
+    border-radius: 0px;
+    padding: 12px;
+  }
+
+  .top-layer {
+    position: relative;
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    a {
+      display: flex;
+      flex-direction: column;
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+      }
+    }
+
+    input {
+      flex: 1;
+      height: 40px;
+      border-radius: 999px;
+      padding: 12px;
+      border: none;
+      outline: none;
+      background-color: #eee;
+      font-size: 16px;
+      margin-left: 10px;
+      overflow: hidden;
+    }
+
+    button {
+      // position: absolute;
+      // right: -10px;
+      height: 40px;
+      border-radius: 999px;
+      padding: 8px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      font-size: 18px;
+      margin-left: 10px;
+      overflow: hidden;
+      color: #888;
+      transform: translate(-10px);
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .bottom-layer {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10px;
+
+    a {
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 33.3%;
+      height: 20px;
+      padding: 20px;
+      color: #888;
+      font-size: 16px;
+      border-radius: 6px;
+      @media screen and (max-width: 600px) {
+        padding: 12px;
+      }
+
+      @media screen and (max-width: 504px) {
+        span {
+          display: none;
+        }
+      }
+
+      &:hover {
+        background-color: #eee;
+      }
+
+      &:nth-child(1) {
+        i {
+          color: red;
+        }
+      }
+
+      &:nth-child(2) {
+        i {
+          color: rgb(10, 194, 72);
+        }
+      }
+      &:nth-child(3) {
+        i {
+          color: rgb(255, 179, 38);
+        }
+      }
+
+      i {
+        font-size: 28px;
+        margin-right: 5px;
+        @media screen and (max-width: 600px) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

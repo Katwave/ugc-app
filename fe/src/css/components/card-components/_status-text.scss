@@ -1,0 +1,24 @@
+.status {
+  width: 100%;
+  height: fit-content;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px 10px 20px;
+  @media screen and (max-width: 600px) {
+    box-shadow: none;
+    border-radius: 0px;
+    padding: 0px 12px 10px 12px;
+  }
+
+  p {
+    color: #333;
+    font-size: 17px;
+    // font-weight: lighter;
+  }
+  .status-text {
+    color: #333;
+    font-size: 24px;
+    font-weight: 500;
+  }
+}

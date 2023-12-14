@@ -1,0 +1,65 @@
+
+{
+    "usersData": [
+        {
+          "name": "Katlego",
+          "surname": "Me",
+          "img": "../img/1.jpg",
+          "status": "Enjoying the best moments",
+          "statusTime": "4h",
+          "numOfComments": "0",
+          "numOfLikes": "99",
+          "tags": ["mug", "pic", "katlego"],
+          "comments": [
+            {
+              "name": "Josh talks",
+              "comment": "This picture is amazing fam. where did you buy the cup?"
+            },
+            {
+              "name": "Katlego Me",
+              "comment": "Thanks man, I made it myself."
+            }
+          ]
+        },
+        {
+          "name": "Thabiso",
+          "surname": "Malema",
+          "img": "../img/2.jpg",
+          "status": "I am moving back to my old place, this one is exhausting!",
+          "statusTime": "2d",
+          "numOfComments": "2",
+          "numOfLikes": "62k",
+          "tags": ["plant", "content"],
+          "comments": []
+        },
+        {
+          "name": "Drizzy",
+          "surname": "Jane",
+          "img": "../img/3.jpg",
+          "status": "Life of a rapper, no capping",
+          "statusTime": "23h",
+          "numOfComments": "0",
+          "numOfLikes": "9",
+          "tags": [],
+          "comments": []
+        },
+        {
+          "name": "Yun",
+          "surname": "Wi",
+          "img": "../img/4.jpg",
+          "status":
+            "I am selling this cup for only 30 dollars and you get another one for free.",
+          "statusTime": "3w",
+          "numOfComments": "1",
+          "numOfLikes": "12",
+          "tags": ["pink", "motivation"],
+          "comments": [
+            {
+              "name": "Katlego Me",
+              "comment":
+                "I need this cup man, I hope you can tell me where you got it."
+            }
+          ]
+        }
+      ]
+}

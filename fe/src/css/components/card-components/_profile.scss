@@ -1,0 +1,136 @@
+.profile {
+  width: 100%;
+  height: fit-content;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  @media screen and (max-width: 600px) {
+    box-shadow: none;
+    border-radius: 0px;
+    padding: 12px;
+  }
+
+  .prof-img {
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    a {
+      width: 40px;
+      height: 40px;
+      background-color: #ddd;
+      color: #777;
+      font-weight: bolder;
+      border-radius: 50px;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+      }
+    }
+  }
+
+  .prof-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    h3 {
+      font-size: 16px;
+      color: #333;
+      a {
+        text-decoration: none;
+        color: #333;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    p {
+      font-size: 14px;
+      color: #999;
+    }
+  }
+
+  .post-menu {
+    position: relative;
+    z-index: 100;
+    p {
+      font-size: 20px;
+      color: #777;
+      // width: 35px;
+      // height: 35px;
+      padding: 8px 11px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #eee;
+      }
+    }
+
+    .show-menu {
+      position: absolute;
+      top: 130%;
+      right: 0%;
+      background-color: #fff;
+      box-shadow: 0px 3px 28px rgba(60, 61, 67, 0.3);
+      width: 330px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      padding: 5px;
+      border-radius: 6px;
+      z-index: 4;
+
+      @media screen and (max-width: 400px) {
+        width: 280px;
+      }
+      @media screen and (max-width: 340px) {
+        width: 240px;
+      }
+
+      span {
+        position: absolute;
+        top: -4%;
+        right: 4%;
+        background-color: #fff;
+        width: 30px;
+        height: 30px;
+        transform: rotate(60deg);
+        z-index: 2;
+      }
+
+      a {
+        padding: 10px 0px;
+        color: #777;
+        text-decoration: none;
+        background-color: transparent;
+        word-wrap: none;
+        word-break: keep-all;
+        transition: all 300ms ease-in-out;
+        z-index: 4;
+        border-radius: 5px;
+        text-align: center;
+
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+
+    .hide-menu {
+      display: none;
+    }
+  }
+}

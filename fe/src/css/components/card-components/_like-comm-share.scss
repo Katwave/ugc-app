@@ -1,0 +1,42 @@
+.like-comm-share {
+  width: 100%;
+  height: fit-content;
+  background-color: transparent;
+  display: flex;
+  align-items: space-evenly;
+  justify-content: space-evenly;
+  padding: 6px 20px 6px 20px;
+  border-top: 2px solid #ddd;
+
+  @media screen and (max-width: 600px) {
+    box-shadow: none;
+    border-radius: none;
+    padding: 6px 12px;
+  }
+
+  a {
+    // padding: 6px 40px;
+    text-align: center;
+    width: 33.3%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: transparent;
+    text-decoration: none;
+    color: #777;
+    // font-size: 17px;
+    font-weight: 550;
+    transition: all 300ms ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: #eee;
+    }
+
+    i {
+      margin-right: 5px;
+      font-size: 18px;
+    }
+  }
+}
