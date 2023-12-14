@@ -43,7 +43,7 @@ function SearchPage() {
     // Use effect
     useEffect(getPosts, [query, loading, q])
 
-    // The heading for tags
+    // The heading for the tags
     const tagsHeading = ()=>{
       if(query.isTag){
         return (<div className="tags-heading">
