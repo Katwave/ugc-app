@@ -13,7 +13,7 @@ body {
 }
 @media screen and (max-width: 600px) {
   body {
-    background-color: #ddd;
+    background-color: #eee;
   }
 }
 body .nav {
