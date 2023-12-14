@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,u } from "react";
 import axios from "axios";
 import getAPI from "../config/api_url";
 import GridPosts from "../GridPosts";
+import { useLocation } from "react-router-dom";
 
 function SearchPage() {
     // Get search query from local storage
     const query = JSON.parse(localStorage.getItem('searchQuery'))
+
+    const location = useLocation()
 
     // Use states
     const [q, setQ] = useState('');
@@ -41,7 +44,7 @@ function SearchPage() {
     }
 
     // Use effect
-    useEffect(getPosts, [query, loading, q])
+    useEffect(getPosts, [location.key, q])
 
     // The heading for the tags
     const tagsHeading = ()=>{
