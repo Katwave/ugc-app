@@ -80,10 +80,12 @@ const Nav = () => {
     navigate(`/search`);
   }
   useEffect(()=>{
-    console.log('tags:', tags);
+    // console.log('searchQ:', searchQ);
   }, [searchQ, showSearchPopup])
 
   const renderSearchPopup = ()=>{
+    console.log('tags:', tags);
+
     return <div className="search-popup" style={showSearchPopup ? {display: 'flex'} : {display: 'none'}}>
       <button className="close" onClick={toggleSearchPopup}><p>X</p></button>
       <input type="text" placeholder="Search" onChange={onChange} />
@@ -101,7 +103,7 @@ const Nav = () => {
       </button>
 
       <div className="mobile-autocomplete">
-        {searchQ.length >= 2 && tags.map((i, ind) =>{
+        {searchQ.length >= 2 && tags.length >=1 && tags.map((i, ind) =>{
           if (searchQ[0] === '#' || searchQ[0] === '@'){
             return <div key={ind}><p onClick={(e)=>{
               submitHandler(e, i, true)
