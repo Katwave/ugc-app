@@ -9,6 +9,7 @@ const StatusComp = ({
   statusText,
   inputValue,
 }) => {
+  // Render the component
   return (
     <div className="status-component">
       <div className="top-layer">
