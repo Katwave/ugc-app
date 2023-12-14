@@ -892,6 +892,8 @@ body .container .grid-post-cont .grid-layout .img-cont:hover .post-stats {
 body .container .grid-post-cont .grid-layout .img-cont img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 body .container .grid-post-cont .grid-layout .img-cont .post-stats {
   position: absolute;
