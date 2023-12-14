@@ -84,8 +84,6 @@ const Nav = () => {
   }, [searchQ, showSearchPopup])
 
   const renderSearchPopup = ()=>{
-    console.log('tags:', tags);
-
     return <div className="search-popup" style={showSearchPopup ? {display: 'flex'} : {display: 'none'}}>
       <button className="close" onClick={toggleSearchPopup}><p>X</p></button>
       <input type="text" placeholder="Search" onChange={onChange} />
